@@ -4,7 +4,7 @@ set -euo pipefail
 APP_DIR="${APP_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
 PID_FILE="${PID_FILE:-$APP_DIR/astrafinapi.pid}"
 DB_FILE="${DB_FILE:-$APP_DIR/astra.db}"
-LOG_FILE="${LOG_FILE:-$APP_DIR/astrafinapi.log}"
+#LOG_FILE="${LOG_FILE:-$APP_DIR/astrafinapi.log}"
 
 echo "[restart] stopping astrafinapi"
 
@@ -33,6 +33,6 @@ for f in "$DB_FILE" "$DB_FILE-wal" "$DB_FILE-shm" "$DB_FILE-journal"; do
   fi
 done
 
-: > "$LOG_FILE" 2>/dev/null || true
+#: > "$LOG_FILE" 2>/dev/null || true
 
-exec "$APP_DIR/start.sh"
+#exec "$APP_DIR/start.sh"

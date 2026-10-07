@@ -32,7 +32,8 @@ export DATABASE_URL="${DATABASE_URL:-sqlite:///$APP_DIR/astra.db}"
 
 nohup "$VENV_DIR/bin/uvicorn" app.main:app \
   --host "$HOST" --port "$PORT" \
-  >>"$LOG_FILE" 2>&1 &
+  --no-access-log \
+  >/dev/null 2>&1 &
 
 echo $! > "$PID_FILE"
 echo "[start] pid=$(cat "$PID_FILE") port=$PORT db=$DATABASE_URL"
