@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+flag.txt
+solve.sh
+.env
+pgdata/
+API_Check/
