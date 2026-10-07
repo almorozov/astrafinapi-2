@@ -35,4 +35,4 @@ done
 
 #: > "$LOG_FILE" 2>/dev/null || true
 
-#exec "$APP_DIR/start.sh"
+exec "$APP_DIR/start.sh"
